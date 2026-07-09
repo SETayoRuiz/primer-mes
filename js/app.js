@@ -24,7 +24,8 @@ const loginError = document.getElementById("loginError");
 
 const voucherContainer = document.getElementById("voucherContainer");
 const template = document.getElementById("voucherTemplate");
-
+const secretLetter = document.getElementById("secretLetter");
+const closeLetter = document.getElementById("closeLetter");
 /* ==========================================================
    VALES
 ========================================================== */
@@ -85,6 +86,13 @@ number:"#008",
 icon:"👨‍🍳👩‍🍳",
 title:"Cita cocinando algo",
 description:"Válido para una cita cocinando algo totalmente nuevo, ya sea postre o plato fuerte sisi que bendición"
+},
+
+{
+    number:"#009",
+    icon:"💌",
+    title:"Vale Secreto",
+    description:"Súper vale secreto que nadie sabe que contiene"
 }
 
 
@@ -185,7 +193,17 @@ clone.querySelector(".voucher-description").textContent=voucher.description;
 
 clone.querySelector(".openVoucher").addEventListener("click",()=>{
 
-card.classList.toggle("open");
+    if(voucher.number === "#009"){
+
+        secretLetter.classList.add("show");
+
+    }
+
+    else{
+
+        card.classList.toggle("open");
+
+    }
 
 });
 
@@ -212,5 +230,11 @@ if(e.key==="Enter"){
 loginButton.click();
 
 }
+
+});
+
+closeLetter.addEventListener("click",()=>{
+
+    secretLetter.classList.remove("show");
 
 });
