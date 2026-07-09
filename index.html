@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nuestro Primer Mes ❤️</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>
+
+    <!-- Fondo -->
+    <div id="background"></div>
+
+    <!-- Bienvenida -->
+    <section id="welcome" class="page active">
+
+        <div class="card">
+
+            <span class="emoji">
+                ❤️
+            </span>
+
+            <h1>
+                Nuestro Primer Mes
+            </h1>
+
+            <p>
+                Hay regalos que se compran...
+                y otros que se construyen con tiempo.
+            </p>
+
+            <button id="startButton">
+                Comenzar
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- Contraseña -->
+
+    <section id="login" class="page">
+
+        <div class="card">
+
+            <h2>
+                Solo tú puedes entrar
+            </h2>
+
+            <input
+                id="password"
+                type="password"
+                placeholder="Nuestra contraseña">
+
+            <button id="loginButton">
+
+                Entrar ❤️
+
+            </button>
+
+            <small id="loginError"></small>
+
+        </div>
+
+    </section>
+
+    <!-- Aplicación -->
+
+    <main id="app">
+
+        <header>
+
+            <h1>
+
+                Feliz Primer Mes ❤️
+
+            </h1>
+
+            <p>
+
+                Gracias por compartir este primer capítulo conmigo.
+
+            </p>
+
+        </header>
+
+        <!-- CONTADOR -->
+
+        <section class="counter-section">
+
+            <h2>
+
+                Llevamos juntos
+
+            </h2>
+
+            <div class="counter">
+
+                <div class="time-card">
+
+                    <span id="days">
+                        00
+                    </span>
+
+                    <small>Días</small>
+
+                </div>
+
+                <div class="time-card">
+
+                    <span id="hours">
+                        00
+                    </span>
+
+                    <small>Horas</small>
+
+                </div>
+
+                <div class="time-card">
+
+                    <span id="minutes">
+                        00
+                    </span>
+
+                    <small>Minutos</small>
+
+                </div>
+
+                <div class="time-card">
+
+                    <span id="seconds">
+                        00
+                    </span>
+
+                    <small>Segundos</small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- VALORES -->
+
+        <section class="voucher-section">
+
+            <h2>
+
+                Tus Vales
+
+            </h2>
+
+            <div id="voucherContainer">
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Template de un vale -->
+
+    <template id="voucherTemplate">
+
+        <article class="voucher">
+
+            <div class="voucher-inner">
+
+                <div class="voucher-front">
+
+                    <span class="voucher-number">
+
+                    </span>
+
+                    <span class="voucher-icon">
+
+                    </span>
+
+                    <h3 class="voucher-title">
+
+                    </h3>
+
+                    <button class="openVoucher">
+
+                        Abrir
+
+                    </button>
+
+                </div>
+
+                <div class="voucher-back">
+
+                    <span class="voucher-stamp">
+
+                        CANJEABLE
+
+                    </span>
+
+                    <p class="voucher-description">
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </template>
+
+    <!-- Footer -->
+
+    <footer>
+
+        Hecho con muchísimo ❤️
+
+    </footer>
+
+    <!-- JS -->
+
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
