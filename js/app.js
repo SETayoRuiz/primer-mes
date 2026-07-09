@@ -2,7 +2,7 @@
    CONFIGURACIÓN
 ========================================================== */
 
-const PASSWORD = "amor"; // <- Cambia esto por la contraseña que quieran
+const PASSWORD = "grogu"; // <- Cambia esto por la contraseña que quieran
 
 // IMPORTANTE:
 // Cambia esta fecha por la fecha oficial en la que comenzaron.
@@ -34,51 +34,59 @@ const vouchers = [
 {
 number:"#001",
 icon:"💋",
-title:"30 minutos de besitos",
-description:"Canjeable cuando tú quieras. Prometo dedicarte toda mi atención durante treinta minutos completos."
+title:"30 minutos de besotes",
+description:"Una sesión de besotes ricotes para el desestrés amor incluye pausas para evitar irritación jaja"
 },
 
 {
 number:"#002",
 icon:"🧺",
 title:"Cita Picnic",
-description:"Incluye comida rica, música, muchas fotos y toda mi atención."
+description:"Tiene snacks, paisajes hermosos de la Carolina y podemos incluir sandwiches caseros 😲"
 },
 
 {
 number:"#003",
 icon:"🎨",
 title:"Cita Dibujándonos",
-description:"No importa si el dibujo queda bonito. Lo importante será reírnos juntos."
+description:"Aunque no soy muy bueno dibujando hare lo que pueda amorcito hermoso jajaj, te amo"
 },
 
 {
 number:"#004",
 icon:"💆",
 title:"Masaje",
-description:"Un masaje relajante acompañado de muchísimos besitos."
+description:"Un masaje relajante acompañado de besotes y si quieres final feliz jaja."
 },
 
 {
 number:"#005",
 icon:"🤗",
 title:"10 minutos de abracitos",
-description:"Sin celulares. Sin distracciones. Solo tú y yo."
+description:"10 minutitos de abracitos ricos para liberar oxitocina y bajar los niveles del córtisol"
 },
 
 {
 number:"#006",
 icon:"🌹",
 title:"Cita Romántica",
-description:"Yo organizaré absolutamente todo. Tú solo disfruta."
+description:"Podemos tener una cita romanticona estilo francés sisi 🥖"
 },
 
 {
 number:"#007",
 icon:"🎉",
 title:"Cita de Conmemoración",
-description:"Para celebrar este primer mes... y todos los que vienen."
+description:"Podemos tener una cita recordando lo que hemos vivido antes durante y lo que quisieramos después jaja"
+},
+
+{
+number:"#008",
+icon:"👨‍🍳👩‍🍳",
+title:"Cita cocinando algo",
+description:"Válido para una cita cocinando algo totalmente nuevo, ya sea postre o plato fuerte sisi que bendición"
 }
+
 
 ];
 
@@ -178,6 +186,12 @@ clone.querySelector(".voucher-description").textContent=voucher.description;
 clone.querySelector(".openVoucher").addEventListener("click",()=>{
 
 card.classList.toggle("open");
+
+});
+
+clone.querySelector(".closeVoucher").addEventListener("click",()=>{
+
+    card.classList.remove("open");
 
 });
 
