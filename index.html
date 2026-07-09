@@ -64,7 +64,7 @@
             <input
                 id="password"
                 type="password"
-                placeholder="Nuestra contraseña">
+                placeholder="hint: personaje de The Mandalorian">
 
             <button id="loginButton">
 
@@ -172,37 +172,47 @@
 
     </main>
 
-    <!-- ==========================
-     CARTA SECRETA
-========================== -->
+<!--====================================
+        SOBRE + CARTA
+=====================================-->
 
     <div id="secretLetter" class="letter-overlay">
 
-        <div class="letter">
+        <div class="envelopeContainer">
 
-            <span class="letterEmoji">💌</span>
+            <div id="envelope" class="envelope">
 
-            <h2>Para mi niña hermosa</h2>
+                <div class="heartSeal">❤️</div>
 
-            <div id="letterContent">
+                <div class="envelopeFlap"></div>
 
-                <p>
-                    Eli, muchas gracias por todos los momentos lindos que hemos vivido
-                    recuerdo los momentos lindos que pasamos antes de oficializar la relación, los nervios que sentía al momento de confesarme, las conversaciones que teníamos mientras cenabamos por horas y horas, las series que compartimos como La Oficina y los ánimes amor
-                    me encanta como vives las series y las películas que hemos visto, aunque a veces te quedes dormidita en medio de lo que vemos jaja.
-                    También quiero agradacerte por los momentos no tan dulces que nos hicieron entendernos mucho mejor, aunque no se sintieron bien en el momento.
-                    Quisiera vivir muchos más momentos contigo, que este primer mes que cumplimos sea el primero de muchos,
-                    muchas gracias por compartirme un pedacito de tu vida, debemos hacer un brindis con tecito matcha por los momentos vividos y por los que nos quedan por vivir
-                    Te amo mucho mi cocadita hermosa, mi sirenita de Galápagos.
-                    
-                    Con mucho amor tu Cocadito🥥 Sebastián
-                </p>
+                <div class="letterPaper">
+
+                    <div class="letterContent">
+
+                        <h2>Para mi niña hermosa</h2>
+
+                        <small>12 de julio de 2026</small>
+
+                        <div id="letterText"></div>
+
+                        <div class="signature">
+                            Con muchísimo amor ❤️
+                            <br>
+                            Tu Cocadito 🥥
+                            <br>
+                            <strong>Sebastián</strong>
+                        </div>
+
+                        <button id="closeLetter">
+                            Cerrar carta ❤️
+                        </button>
+
+                    </div>
+
+                </div>
 
             </div>
-
-            <button id="closeLetter">
-                Cerrar carta ❤️
-            </button>
 
         </div>
 

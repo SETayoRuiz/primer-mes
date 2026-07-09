@@ -98,6 +98,39 @@ description:"Válido para una cita cocinando algo totalmente nuevo, ya sea postr
 
 ];
 
+const LETTER = `
+
+<p>
+Querida Eli,
+</p>
+
+<p>
+Muchas gracias por todos los momentos lindos que hemos vivido. Recuerdo con muchísimo cariño todos esos momentos que compartimos antes de oficializar nuestra relación: los nervios que sentía al momento de confesarme y todas esas conversaciones que teníamos mientras cenábamos durante horas y horas.
+</p>
+
+<p>
+También recuerdo con una sonrisa las series y los animes que compartimos, como La Oficina Mexicana. Me encanta la forma en la que vives cada serie y cada película que vemos juntos, aunque a veces te quedes dormidita a la mitad de lo que estamos viendo jajaja. Creo que esos pequeños momentos son los que hacen que todo sea aún más especial.
+</p>
+
+<p>
+Quiero agradecerte también por aquellos momentos que no fueron tan dulces. Aunque en su momento no se sintieron bien, nos ayudaron a conocernos mejor, entendernos más y fortalecer lo que estamos construyendo juntos. Hoy los valoro porque también forman parte de nuestra historia.
+</p>
+
+<p>
+Quisiera vivir muchísimos más momentos contigo. Deseo que este primer mes que celebramos sea solo el primero de muchísimos más. Gracias por permitirme compartir un pedacito de tu vida conmigo.
+</p>
+
+<p>
+Todavía nos queda pendiente hacer un brindis con un tecito matcha por todos los momentos que hemos vivido y por todos los que aún nos esperan. Estoy seguro de que apenas estamos comenzando a escribir una historia muy bonita juntos.
+</p>
+
+<p>
+Te amo muchísimo, mi cocadita hermosa, mi sirenita de Galápagos. ❤️
+</p>
+
+
+`;
+
 /* ==========================================================
    BIENVENIDA
 ========================================================== */
@@ -195,7 +228,7 @@ clone.querySelector(".openVoucher").addEventListener("click",()=>{
 
     if(voucher.number === "#009"){
 
-        secretLetter.classList.add("show");
+        openSecretLetter();
 
     }
 
@@ -207,6 +240,8 @@ clone.querySelector(".openVoucher").addEventListener("click",()=>{
 
 });
 
+
+
 clone.querySelector(".closeVoucher").addEventListener("click",()=>{
 
     card.classList.remove("open");
@@ -216,6 +251,88 @@ clone.querySelector(".closeVoucher").addEventListener("click",()=>{
 voucherContainer.appendChild(clone);
 
 });
+
+}
+
+/* ==========================================================
+   SECUENCIA DE LA CARTA SECRETA
+========================================================== */
+
+function openSecretLetter(){
+
+    secretLetter.classList.add("show");
+
+    const envelope = document.getElementById("envelope");
+
+    // 1) El sobre se abre y la carta se desliza un poco
+    setTimeout(()=>{
+
+        envelope.classList.add("open");
+
+    },400);
+
+    // 2) La carta crece hasta llenar la pantalla y el sobre desaparece
+    setTimeout(()=>{
+
+        envelope.classList.add("expanded");
+
+    },400+1300);
+
+    // 3) El texto empieza a aparecer poco a poco
+    setTimeout(()=>{
+
+        revealLetterText();
+
+    },400+1300+1100);
+
+}
+
+function revealLetterText(){
+
+    const paragraphs = document.querySelectorAll("#letterText p");
+
+    paragraphs.forEach((p,i)=>{
+
+        setTimeout(()=>{
+
+            p.classList.add("revealed");
+
+        }, i*700);
+
+    });
+
+    const totalTime = paragraphs.length*700;
+
+    // 4) La firma aparece al final
+    setTimeout(()=>{
+
+        document.querySelector(".signature").classList.add("revealed");
+
+    }, totalTime+400);
+
+    setTimeout(()=>{
+
+        document.getElementById("closeLetter").classList.add("revealed");
+
+    }, totalTime+1400);
+
+}
+
+function resetSecretLetter(){
+
+    const envelope = document.getElementById("envelope");
+
+    envelope.classList.remove("open","expanded");
+
+    document.querySelectorAll("#letterText p").forEach(p=>{
+
+        p.classList.remove("revealed");
+
+    });
+
+    document.querySelector(".signature").classList.remove("revealed");
+
+    document.getElementById("closeLetter").classList.remove("revealed");
 
 }
 
@@ -233,8 +350,22 @@ loginButton.click();
 
 });
 
+window.addEventListener("DOMContentLoaded", () => {
+
+    document.getElementById("letterText").innerHTML = LETTER;
+
+});
+
+
 closeLetter.addEventListener("click",()=>{
 
     secretLetter.classList.remove("show");
 
+    setTimeout(()=>{
+
+        resetSecretLetter();
+
+    },400);
+
 });
+

@@ -812,3 +812,407 @@ CARTA
     }
 
 }
+
+/*=================================================
+
+                SOBRE SECRETO
+
+=================================================*/
+
+.letter-overlay{
+
+    position:fixed;
+    inset:0;
+
+    background:linear-gradient(
+        135deg,
+        rgba(255,235,243,.95),
+        rgba(255,247,250,.98)
+    );
+
+    backdrop-filter:blur(12px);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    opacity:0;
+    pointer-events:none;
+
+    transition:.5s;
+
+    z-index:5000;
+
+}
+
+.letter-overlay.show{
+
+    opacity:1;
+    pointer-events:all;
+
+}
+
+.envelopeContainer{
+
+    perspective:1800px;
+
+}
+
+.envelope{
+
+    position:relative;
+
+    width:650px;
+    max-width:92vw;
+
+    height:430px;
+
+    transition: width 1s ease, height 1s ease;
+
+}
+
+/*=========================================
+                CORAZÓN
+=========================================*/
+
+.heartSeal{
+
+    position:absolute;
+
+    left:50%;
+    top:-30px;
+
+    transform:translateX(-50%);
+
+    font-size:42px;
+
+    z-index:20;
+
+    animation:heartbeat 1.4s infinite;
+
+}
+
+/*=========================================
+                SOBRE
+=========================================*/
+
+.envelope::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:#f8f0eb;
+
+    border-radius:18px;
+
+    box-shadow:
+        0 35px 80px rgba(0,0,0,.18);
+
+}
+
+/*=========================================
+            TAPA DEL SOBRE
+=========================================*/
+
+.envelopeFlap{
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:220px;
+
+    background:#f1dfd5;
+
+    clip-path:polygon(
+        0 0,
+        100% 0,
+        50% 100%
+    );
+
+    transform-origin:top;
+
+    transition:1s;
+
+    z-index:15;
+
+}
+
+.envelope.open .envelopeFlap{
+
+    transform:rotateX(180deg);
+
+}
+
+/*=========================================
+            CARTA
+=========================================*/
+
+.letterPaper{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:18px;
+
+    transform:translateX(-50%);
+
+    width:88%;
+
+    height:88%;
+
+    background:#fffdf8;
+
+    border-radius:14px;
+
+    overflow:hidden;
+
+    box-shadow:
+
+        0 12px 40px rgba(0,0,0,.15);
+
+    transition:1.2s;
+
+    z-index:10;
+
+}
+
+.envelope.open .letterPaper{
+
+    transform:
+
+        translateX(-50%)
+
+        translateY(-160px);
+
+}
+
+/*=========================================
+            CONTENIDO
+=========================================*/
+
+.letterContent{
+
+    padding:55px;
+
+    height:100%;
+
+    overflow-y:auto;
+
+}
+
+.letterContent h2{
+
+    text-align:center;
+
+    color:#d55b89;
+
+    margin-bottom:8px;
+
+}
+
+.letterContent small{
+
+    display:block;
+
+    text-align:center;
+
+    color:#999;
+
+    margin-bottom:35px;
+
+}
+
+#letterText{
+
+    color:#444;
+
+    line-height:2;
+
+    font-size:18px;
+
+}
+
+#letterText p{
+
+    margin-bottom:25px;
+
+}
+
+.signature{
+
+    text-align:right;
+
+    margin-top:45px;
+
+    color:#555;
+
+    font-size:20px;
+
+}
+
+#closeLetter{
+
+    display:block;
+
+    margin:55px auto 0;
+
+}
+
+/*=========================================
+            SCROLL
+=========================================*/
+
+.letterContent::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+.letterContent::-webkit-scrollbar-thumb{
+
+    background:#e87695;
+
+    border-radius:10px;
+
+}
+
+/*=========================================
+            ANIMACIONES
+=========================================*/
+
+@keyframes heartbeat{
+
+    0%{
+
+        transform:translateX(-50%) scale(1);
+
+    }
+
+    20%{
+
+        transform:translateX(-50%) scale(1.12);
+
+    }
+
+    40%{
+
+        transform:translateX(-50%) scale(.95);
+
+    }
+
+    60%{
+
+        transform:translateX(-50%) scale(1.08);
+
+    }
+
+    100%{
+
+        transform:translateX(-50%) scale(1);
+
+    }
+
+}
+
+/*=========================================
+        CARTA EXPANDIDA (pantalla completa)
+=========================================*/
+
+.envelope.expanded{
+
+    width:90vw;
+    height:85vh;
+
+    max-width:900px;
+    max-height:800px;
+
+}
+
+.envelope.expanded::before{
+
+    opacity:0;
+    transition:opacity .6s ease;
+
+}
+
+.envelope.expanded .envelopeFlap{
+
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .5s ease;
+
+}
+
+.envelope.expanded .heartSeal{
+
+    opacity:0;
+    transition:opacity .4s ease;
+
+}
+
+.envelope.expanded .letterPaper{
+
+    bottom:auto;
+    top:50%;
+    left:50%;
+
+    width:94%;
+    height:94%;
+
+    transform:translate(-50%,-50%);
+
+}
+
+/*=========================================
+        TEXTO PROGRESIVO
+=========================================*/
+
+#letterText p{
+
+    opacity:0;
+    transform:translateY(15px);
+    transition:opacity .8s ease, transform .8s ease;
+
+}
+
+#letterText p.revealed{
+
+    opacity:1;
+    transform:translateY(0);
+
+}
+
+.signature{
+
+    opacity:0;
+    transition:opacity 1s ease;
+
+}
+
+.signature.revealed{
+
+    opacity:1;
+
+}
+
+#closeLetter{
+
+    opacity:0;
+    transition:opacity .8s ease;
+
+}
+
+#closeLetter.revealed{
+
+    opacity:1;
+
+}
