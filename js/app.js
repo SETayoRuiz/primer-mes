@@ -2,7 +2,7 @@
    CONFIGURACIÓN
 ========================================================== */
 
-const PASSWORD = "grogu"; // <- Cambia esto por la contraseña que quieran
+const PASSWORD = "EliYSeb2026#"; // <- Cambia esto por la contraseña que quieran
 
 // IMPORTANTE:
 // Cambia esta fecha por la fecha oficial en la que comenzaron.
