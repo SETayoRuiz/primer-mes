@@ -59,17 +59,15 @@ body{
 
     font-family:'Poppins',sans-serif;
 
-    background:linear-gradient(
-        180deg,
-        var(--bg),
-        var(--bg2)
-    );
+    background:linear-gradient(180deg, var(--bg), var(--bg2));
 
     color:var(--text);
 
     overflow-x:hidden;
 
     min-height:100vh;
+
+    width:100%;
 
 }
 
@@ -470,6 +468,8 @@ TICKET
 
     text-align:center;
 
+    justify-content:flex-start;
+
 }
 
 .voucher-back{
@@ -544,13 +544,17 @@ FRONT
 
     font-size:24px;
 
-    margin-bottom:40px;
+    margin-bottom:20px;
+
+    line-height:1.3;
 
 }
 
 .openVoucher{
 
     width:100%;
+
+    margin-top:auto;
 
 }
 
@@ -648,6 +652,87 @@ RESPONSIVE
 
     }
 
+      /* NUEVO: sobre/carta en móvil */
+
+    .envelope{
+
+        width:92vw;
+        height:60vh;
+
+    }
+
+    .envelope.expanded{
+
+        width:94vw;
+        height:88vh;
+
+    }
+
+    .letterContent{
+
+        padding:28px 22px;
+
+    }
+
+    #letterText{
+
+        font-size:16px;
+
+        line-height:1.8;
+
+    }
+
+    .letterContent h2{
+
+        font-size:1.4rem;
+
+    }
+
+    .signature{
+
+        font-size:17px;
+
+    }
+
+    .heartSeal{
+
+        font-size:34px;
+
+    }
+
+}
+
+@media(max-width:400px){
+
+    .card{
+
+        padding:25px;
+
+    }
+
+    .card h1{
+
+        font-size:2.2rem;
+
+    }
+
+    .voucher-title{
+
+        font-size:20px;
+
+    }
+
+    .letterContent{
+
+        padding:20px 16px;
+
+    }
+
+    #letterText{
+
+        font-size:15px;
+
+    }
 }
 
 /*----------------------------------
