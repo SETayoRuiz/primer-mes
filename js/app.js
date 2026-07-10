@@ -105,7 +105,7 @@ Querida Eli,
 </p>
 
 <p>
-Muchas gracias por todos los momentos lindos que hemos vivido. Recuerdo con muchísimo cariño todos esos momentos que compartimos antes de oficializar nuestra relación: los nervios que sentía al momento de confesarme y todas esas conversaciones que teníamos mientras cenábamos durante horas y horas.
+Muchas gracias por todos los momentos lindos que hemos vivido. Recuerdo con muchísimo cariño todos esos momentos que compartimos antes de oficializar nuestra relación: los nervios que sentía al momento de confesarme y todas esas conversaciones que teníamos mientras cenábamos, que seguían en tu casa durante horas y horas.
 </p>
 
 <p>

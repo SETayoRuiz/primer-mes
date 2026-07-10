@@ -556,6 +556,24 @@ FRONT
 
     margin-top:auto;
 
+    position:relative;
+
+}
+
+.openVoucher::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-20px;
+
+    left:0;
+
+    right:0;
+
+    border-top:2px dashed #eee;
+
 }
 
 /* ===========================
@@ -741,35 +759,19 @@ Separador ticket
 
 -----------------------------------*/
 
-.voucher-front::before{
+.voucher-icon{
 
-    content:"";
+    display:block;
 
-    position:absolute;
+    font-size:55px;
 
-    left:0;
+    margin-bottom:20px;
 
-    right:0;
+    padding-bottom:20px;
 
-    top:78px;
+    border-bottom:2px dashed #eee;
 
-    border-top:2px dashed #eee;
-
-}
-
-.voucher-front::after{
-
-    content:"";
-
-    position:absolute;
-
-    left:0;
-
-    right:0;
-
-    bottom:70px;
-
-    border-top:2px dashed #eee;
+    width:100%;
 
 }
 
